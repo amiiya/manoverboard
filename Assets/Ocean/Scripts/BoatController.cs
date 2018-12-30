@@ -31,6 +31,7 @@ public class BoatController : Boyancy{
         m_rigidbody = GetComponent<Rigidbody>();
         m_rigidbody.drag = 1;
         m_rigidbody.angularDrag = 1;
+		m_boatAudioSource.pitch = m_boatAudioMinPitch;
 
 		initPosition ();
 	}
