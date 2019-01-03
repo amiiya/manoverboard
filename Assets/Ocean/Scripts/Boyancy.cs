@@ -9,7 +9,7 @@ public class Boyancy : MonoBehaviour
 	private List<Vector3> blobs;
 	private float ax = 2.0f;
 	private float ay = 2.0f;
-	private bool engine = false;
+	//private bool engine = false;
 	private List<float> sinkForces;
 
 	[Header("Boyancy :")]
