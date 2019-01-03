@@ -1,7 +1,7 @@
 # Man Overboard
 Fork from laurentClave/Ocean_mobile_with_boat_physic
 
-# About the game
+## About the game
 You can start the game by opening the scene in Assets/Scene and click the Play Button in Unity. The goal for this game is to find the drowning man overboard within the given time.
 
 ## Ocean mobile with boat physic controller
