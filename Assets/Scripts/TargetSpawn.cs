@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class TargetSpawn : MonoBehaviour
 {
-    public Text countdown;
+    GameObject uicamera;
     public Text win;
+    public Text lose;
+    AudioSource audio;
 
     void Start()
     {
+        uicamera = GameObject.Find("UICamera");
+        audio = GetComponent<AudioSource>();
         int distance = Random.Range(200, 300);
         Vector3 position = new Vector3(distance % 2 == 0 ? distance*1 : distance*-1, 0, Random.Range(0, 2) == 0 ? distance*1 : distance*-1);
         Debug.Log(position);
@@ -19,9 +23,9 @@ public class TargetSpawn : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         transform.position = new Vector3(transform.position.x, 10, transform.position.z);
-        Debug.Log("COLIIIIIDEEEE");
         RenderSettings.fog = false;
-        countdown.enabled = false;
-        win.enabled = true;
+        win.gameObject.SetActive(true);
+        uicamera.GetComponent<Countdown>().enabled = false;
+        audio.mute = true;
     }
 }
