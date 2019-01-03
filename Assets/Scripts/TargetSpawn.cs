@@ -8,12 +8,12 @@ public class TargetSpawn : MonoBehaviour
     GameObject uicamera;
     public Text win;
     public Text lose;
-    AudioSource audio;
+    AudioSource audioSource;
 
     void Start()
     {
         uicamera = GameObject.Find("UICamera");
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         int distance = Random.Range(200, 300);
         Vector3 position = new Vector3(distance % 2 == 0 ? distance*1 : distance*-1, 0, Random.Range(0, 2) == 0 ? distance*1 : distance*-1);
         Debug.Log(position);
@@ -26,6 +26,6 @@ public class TargetSpawn : MonoBehaviour
         RenderSettings.fog = false;
         win.gameObject.SetActive(true);
         uicamera.GetComponent<Countdown>().enabled = false;
-        audio.mute = true;
+        audioSource.mute = true;
     }
 }
