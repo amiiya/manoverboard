@@ -14,7 +14,7 @@ public class TargetSpawn : MonoBehaviour
     {
         uicamera = GameObject.Find("UICamera");
         audioSource = GetComponent<AudioSource>();
-        int distance = Random.Range(200, 300);
+        int distance = Random.Range(100, 200);
         Vector3 position = new Vector3(distance % 2 == 0 ? distance*1 : distance*-1, 0, Random.Range(0, 2) == 0 ? distance*1 : distance*-1);
         Debug.Log(position);
         transform.position = position;
